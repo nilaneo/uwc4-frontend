@@ -1,11 +1,3 @@
-/*
- * HTML5 Boilerplate
- *
- * What follows is the result of much research on cross-browser styling.
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
- */
-
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
@@ -30,39 +22,6 @@ body {
   -o-box-sizing: border-box;
   box-sizing: border-box;
 }
-
-/*
- * Remove text-shadow in selection highlight: h5bp.com/i
- * These selection rule sets have to be separate.
- * Customize the background color to match your design.
- */
-
-::-moz-selection {
-    background: #b3d4fc;
-    text-shadow: none;
-}
-
-::selection {
-    background: #b3d4fc;
-    text-shadow: none;
-}
-
-/*
- * A better looking default horizontal rule
- */
-
-hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
-}
-
-/*
- * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
- */
 
 img {
     vertical-align: middle;
@@ -98,13 +57,13 @@ textarea {
 }
 
 /* ==========================================================================
-   Author's custom styles
+   Custom styles
    ========================================================================== */
 
 a {
-    text-decoration: none;
-    color: rgb(121, 168, 231);
     border-bottom: 1px solid;
+    color: rgb(121, 168, 231);
+    text-decoration: none;        
 }
 
 a:visited, .dotted {
@@ -117,7 +76,8 @@ a:hover, .dotted:hover {
 
 html, 
 body, 
-.main {
+.main {    
+    min-width: 850px;
     height: 100%;
 }
 
@@ -129,45 +89,117 @@ body,
 }
 
 .container {
-    position: absolute; 
-    left: 50%; 
-    top: 50%; 
-    margin-left: -275px; 
-    margin-top: -85px; 
-    width: 550px;    
-    overflow: hidden;                
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    overflow: hidden;
+    width: 550px; 
+    margin-top: -85px;    
+    margin-left: -275px;                    
 }
 
-.logo {    
-    margin-top: 15px;
-    width: 150px;            
+.container-results {
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
-.search {
+/* Logo
+   ===================================================================== */
+
+.logo {
+    width: 150px;
+    margin-top: 15px;               
+}
+
+.logo-title {
+    margin-bottom: 0; 
+    background: url('../img/coolim.png') no-repeat;       
+}
+
+.logo-subtitle {
+    margin-top: 0;
+    color: rgb(171, 184, 201);
+    font-size: 12px;
+    font-weight: normal;         
+}
+
+.logo-title-results-page {
+    width: 185px;
+    height: 100px;
+    padding: 40px 0 0 30px;
+}
+
+
+ /* Searching
+    ==================================================================== */
+
+ .search-bar {
     width: 375px;              
 }
 
+.search-input {
+    width: 75%;
+    height: 30px;    
+    padding: 3px 5px 3px 3px;
+    border: 1px solid #adcdf9;
+    border-radius: 5px 0 0 5px;
+    margin-bottom: 0;
+    font-size: 14px;            
+}
+
+.search-button {
+    width: 25%;
+    height: 30px;        
+    border-radius: 0 5px 5px 0;
+    border: 1px solid #adcdf9;
+    border-left: none;
+    background: #ffffff; 
+    background: -moz-linear-gradient(top, #ffffff, #eeeeee); 
+    background: -webkit-linear-gradient(top, #ffffff, #eeeeee); 
+    background: -o-linear-gradient(top, #ffffff, #eeeeee); 
+    background: -ms-linear-gradient(top, #ffffff, #eeeeee); 
+    background: linear-gradient(top, #ffffff, #eeeeee); 
+    font-size: 14px;
+}
+
+.search-button:hover {    
+    background: -moz-linear-gradient(top, #ffffff, #f1f1f1); 
+    background: -webkit-linear-gradient(top, #ffffff, #f1f1f1); 
+    background: -o-linear-gradient(top, #ffffff, #f1f1f1); 
+    background: -ms-linear-gradient(top, #ffffff, #f1f1f1); 
+    background: linear-gradient(top, #ffffff, #f1f1f1); 
+    color: #555;
+}
+
+.search-bar-results {    
+    padding-top: 28px;
+    margin: 0 200px;
+}
+
+/* Tooltips
+   =================================================================== */
+ 
 .tooltip {
-    line-height: 30px;
+    position: relative;    
     padding: 0 20px;
     margin-top: 10px;
     border-radius: 5px;
-    background-color: #ffef77;
-    position: relative;
+    background-color: #ffef77;    
+    line-height: 30px;
 }
 
 .tooltip:before {
-    content: '';
+    position: absolute;
+    top: -7px; 
+    left: 30px;       
     display: block;
+    height: 0;
+    width: 0;
     border-bottom: 7px solid #ffef77;
     border-left: 7px solid transparent;
-    border-right: 7px solid transparent;
-    height: 0;
-    line-height: 0;
-    position: absolute;
-    left: 30px;
-    top: -7px;
-    width: 0;    
+    border-right: 7px solid transparent;    
+    line-height: 0; 
+    content: '';  
 }
 
 .tooltip-primary {
@@ -179,31 +211,36 @@ body,
 }
 
 .tooltip-input {
-    padding: 3px;
+    height: 36px;
+    padding: 3px;    
 }
 
-.logo-title {
-    background: url('../img/coolim.png') no-repeat;
-    margin-bottom: 0;    
+.tooltip-page {
+    display: inline-block;
+    width: 34px !important;
+    height: 34px !important;
+    padding: 0;    
 }
 
-.logo-subtitle {
-    font-size: 12px;
-    color: rgb(171, 184, 201);
-    font-weight: normal;
-    margin-top: 0;     
+.tooltip-page:before {
+    left: 10px;    
 }
 
-.footer {
-    padding: 15px 30px;
-    height: 45px;
-    font-size: 11px;
-    line-height: 10px;
+.chosen-page {
+    width: 26px;
+    height: 26px;     
+    border: 1px solid #adcdf9;
+    border-radius: 5px;
+    margin: 4px;    
+    background-color: #fff;      
 }
+
+/* Lists
+   =================================================================== */
 
 .inline-list {
-    margin: 0;
     padding: 0;
+    margin: 0;    
     list-style: none;
 }
 
@@ -212,12 +249,13 @@ body,
 }
 
 .inline-list-separated li { 
-    border-left: 1px solid rgb(121, 168, 231);
-    padding: 0 20px;
+    padding: 0 16px;
+    border-left: 1px solid rgb(121, 168, 231);    
 }
 
 .inline-list-separated li:first-child{
-    border-left: none;
+    padding-left: 0;
+    border-left: none;    
 }
 
 .searching-items {
@@ -228,6 +266,9 @@ body,
     padding-right: 20px;
 }
 
+/* Links
+   =================================================================== */
+
 .searching-items a {
     border-bottom: 1px dotted;
 }
@@ -236,11 +277,17 @@ body,
     border-bottom: none;
 }
 
+/* Pictures
+   =================================================================== */
+
 .language-img {
     margin-right: 10px;
     margin-bottom: 3px;
     vertical-align: middle;
 }
+
+/* Floats
+   =================================================================== */
 
 .float-left {
     float: left;
@@ -250,44 +297,142 @@ body,
     float: right;
 }
 
-.search-input {
-    height: 30px;
-    width: 75%;
-    padding: 3px 5px 3px 3px;
-    margin-bottom: 0;
-    font-size: 14px; 
-    border-radius: 5px 0 0 5px;
-    border: 1px solid #adcdf9;    
+/* Search-results header
+   =================================================================== */
+
+.results-quantity {
+    float: right;
+    padding: 55px 30px 0 0;
+    color: #999;
+    font: 12px Arial, sans-serif;
 }
 
-.search-button {
-    height: 30px;
-    width: 25%;    
-    border-radius: 0 5px 5px 0;
-    border: 1px solid #adcdf9;
-    border-left: none;
-    background: #ffffff; /* Для старых браузров */
-    background: -moz-linear-gradient(top, #ffffff, #eeeeee); /* Firefox 3.6+ */
-    background: -webkit-linear-gradient(top, #ffffff, #eeeeee); /* Chrome 1-9, Safari 4-5 */
-    background: -o-linear-gradient(top, #ffffff, #eeeeee); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top, #ffffff, #eeeeee); /* IE10 */
-    background: linear-gradient(top, #ffffff, #eeeeee); /* CSS3 */ 
-    font-size: 14px;
+.header-results {
+    height: 100px;
 }
 
-.search-button:hover {
-    color: #555;
-    background: -moz-linear-gradient(top, #ffffff, #f1f1f1); /* Firefox 3.6+ */
-    background: -webkit-linear-gradient(top, #ffffff, #f1f1f1); /* Chrome 1-9, Safari 4-5 */
-    background: -o-linear-gradient(top, #ffffff, #f1f1f1); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top, #ffffff, #f1f1f1); /* IE10 */
-    background: linear-gradient(top, #ffffff, #f1f1f1); /* CSS3 */
+/* Navigation panel
+   =================================================================== */
+
+.navigation {
+    float: left;
+    width: 180px;
+    padding-left: 30px;
+    line-height: 23px;     
 }
+
+.navigation h3 {
+    margin: 0;
+    color: #999;
+    font: 11px Arial, sans-serif;    
+    font-weight: normal;
+}
+
+.navigation ul {
+    padding: 0;
+    margin: 0;
+}
+
+.navigation li {
+    list-style: none;
+}
+
+.navigation a { 
+    border-bottom: none;   
+    color: #6293df;
+    font: Arial 12px;    
+}
+
+.chosen {
+    color: #363a40;
+    font-weight: bold;
+}
+
+.resourse,
+.search,
+.license {
+    margin-bottom: 30px;
+}
+
+/* Search-results
+   =================================================================== */
+ 
+.results { 
+    padding: 0;            
+    margin-left: 181px;       
+}
+
+.pictures {    
+    padding-left: 17px;
+}
+
+.pictures li {
+    display: inline-block;
+    padding: 5px;
+    list-style: none;    
+}
+
+.page-button {
+    width: 95px;
+    height: 25px;    
+    border: 1px solid #d0e2fb; 
+    border-radius: 5px;      
+    margin: 15px 20px 30px;       
+    background: #f9fbfe; 
+    background: -moz-linear-gradient(top, #f9fbfe, #f0f2f5); /* Firefox 3.6+ */
+    background: -webkit-linear-gradient(top, #f9fbfe, #f0f2f5); /* Chrome 1-9, Safari 4-5 */
+    background: -o-linear-gradient(top, #f9fbfe, #f0f2f5); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #f9fbfe, #f0f2f5); /* IE10 */
+    background: linear-gradient(top, #f9fbfe, #f0f2f5); /* CSS3 */ 
+    color: #363a40;
+    font-size: 12px;
+}
+
+.page-button:hover {
+    background: #f4f6f9; 
+    background: -moz-linear-gradient(top, #f4f6f9, #dbe4f0); /* Firefox 3.6+ */
+    background: -webkit-linear-gradient(top, #f4f6f9, #dbe4f0); /* Chrome 1-9, Safari 4-5 */
+    background: -o-linear-gradient(top, #f4f6f9, #dbe4f0); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #f4f6f9, #dbe4f0); /* IE10 */
+    background: linear-gradient(top, #f4f6f9, #dbe4f0); /* CSS3 */ 
+    color: #4c525a;
+}
+
+.pages {
+    width: 300px;
+    margin: 0 auto;    
+    color: #6293df;
+    text-align: center;
+}
+
+.pages li {
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+}
+
+/* Footers
+   =================================================================== */
+
+ .footer, .push {
+    height: 45px;
+    clear: both;
+ }
+
+.footer {
+    padding: 15px 30px;     
+    line-height: 10px;
+    font-size: 11px;
+}
+
+/* Social icons
+   =================================================================== */
 
 .social-icon {
-    height: 16px;
-    width: 16px;
     display: inline-block;
+    width: 16px;
+    height: 16px;    
     background: url('../img/social-icons-sprite.gif') no-repeat;
 }
 
@@ -304,9 +449,11 @@ body,
     background-position:  -60px 0;
 }
 .social-icon-plus {
-    background-position:  -80px 0;
     width: 57px;
+    background-position:  -80px 0;    
 }
+
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
